@@ -1,0 +1,132 @@
+    <Spinner
+        android:id="@+id/choose_language_list_spinner"
+        style="@style/Spinner"
+        android:layout_height="wrap_content" />
+		
+		
+		
+	public List<ReferenceData> getAllLanguages(final Context context) {
+		
+		final List<ReferenceData> languageList = new ArrayList<ReferenceData>(); 
+		
+		languageList.add(new ReferenceData("AMHARIGNA", context.getString(R.string.choose_language_button_am)));
+		
+		languageList.add(new ReferenceData("GEEZ", context.getString(R.string.choose_language_button_)));
+		
+		languageList.add(new ReferenceData("ENGLISH", context.getString(R.string.choose_language_english)));
+		
+		return languageList;
+		
+	}
+	
+	
+	new AsyncTask<Void, Void, List<ReferenceData>>() {
+			
+			Throwable exception;
+			
+			@Override
+			protected List<ReferenceData> doInBackground(Void... params) {
+
+				try {
+					
+					return LanguageDataProvider.getInstance(ChooseLanguage.this).getAllLanguages(ChooseLanguage.this);
+					
+				} catch(Throwable ex) {
+					
+					exception = ex;
+				}
+				
+				return null;
+			}
+
+			@Override
+			protected void onPostExecute(List<ReferenceData> languages) {
+
+				if(null != languages) {
+					
+					final ModelListAdapter languageListAdapter = new ModelListAdapter(ChooseLanguage.this, android.R.layout.simple_spinner_item, languages);
+					
+					languageListAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+					
+					languageListSpinner.setAdapter(languageListAdapter);
+					
+				} else {
+					
+					if(null != exception) {
+						
+						handleException(exception, null);
+					}
+				}
+				
+			}
+			
+		}.execute();
+		
+		languageListSpinner.setOnItemSelectedListener(this);
+	}
+
+	public void onItemSelected(final AdapterView<?> adapterView, final View selectedItemView, final int position, final long id) {
+		
+		/*
+		Language selectedLanguage =  (Language) ((Spinner) adapterView).getSelectedItem();
+		
+		final Intent intent = new Intent(ChooseLanguage.this, Home.class);
+		
+		intent.putExtra(Constants.ACTIVITY_PROPERTY_SELECTED_LANGUAGE, selectedLanguage.toString());
+		
+		startActivity(intent);
+		
+		*/
+	
+		new AsyncTask<Void, Void, Language>() {
+
+			@Override
+			protected Language doInBackground(Void... params) {
+				
+				return (Language) ((Spinner) adapterView).getSelectedItem();
+			
+			}
+
+			@Override
+			protected void onPostExecute(Language result) {
+			
+				final Intent intent = new Intent(ChooseLanguage.this, Home.class);
+				
+				intent.putExtra(Constants.ACTIVITY_PROPERTY_SELECTED_LANGUAGE, result.toString());
+				
+				startActivity(intent);
+				
+			}
+		
+		}.execute();
+
+		
+	}
+
+	public void onNothingSelected(AdapterView<?> arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+	
+	private String languagePrefix;
+	
+	private void setLanguage() {
+		
+		if(null != selectedLanguage) {
+			
+			if(selectedLanguage.equals(Language.AMHARIGNA.name())) {
+				
+				languagePrefix = "am";
+				
+			} else if(selectedLanguage.equals(Language.GEEZ.name())) {
+				
+				languagePrefix = "ge";
+			
+			} else if(selectedLanguage.equals(Language.ENGLISH.name())) {
+				
+				languagePrefix = "en";
+			}	
+		}	
+	}

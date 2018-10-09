@@ -1,0 +1,13 @@
+Things to consider
+
+navigation - use current drawer navigation(use fragments with android support library)
+
+buttons dont have native feel, dont use rounded corners, if you need it use the theme rounds, the curves on your app are too much
+
+color - too many colors ( use theme holo light). 
+
+background - i would suggest  =you use a solid color
+
+font size - English text size should be smaller. (use sp and dp to define size)
+
+best

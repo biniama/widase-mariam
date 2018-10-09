@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+	<CheckBoxPreference
+
+	    android:title="@string/intro_song"
+	    android:defaultValue="true"
+	    android:key="checkBoxKey"
+	    android:summary="@string/intro_song_summary">
+	    
+	</CheckBoxPreference>
+	   
+	<ListPreference
+
+	    android:title="@string/default_language"
+	    android:key="languageListKey"
+	    android:summary="@string/default_language_summary"
+	    android:entries="@array/langList"
+	    android:entryValues="@array/langListValues">
+	    
+	</ListPreference>
+	
+	<ListPreference
+
+	    android:title="@string/default_font_size"
+	    android:key="fontSizeListKey"
+	    android:summary="@string/default_font_size_summary"
+	    android:entries="@array/fontSizeList"
+	    android:entryValues="@array/fontSizeListValues">
+	    
+	</ListPreference>
+	
+</PreferenceScreen>

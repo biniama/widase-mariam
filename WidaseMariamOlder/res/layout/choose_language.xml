@@ -1,0 +1,41 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/header" />
+
+    <TextView
+        android:id="@+id/choose_language_list_label"
+        style="@style/TextView.Header"
+        android:gravity="center"
+        android:text="@string/choose_language_list_label"
+        android:textStyle="normal|bold" />
+
+    <LinearLayout
+        style="@style/Container.Button"
+        android:layout_width="match_parent" >
+
+        <Button
+            android:id="@+id/choose_language_button_am"
+            style="@style/Navigation.Button.Execute"
+            android:text="@string/choose_language_button_am" />
+
+        <Button
+            android:id="@+id/choose_language_button_ge"
+            style="@style/Navigation.Button.Execute"
+            android:text="@string/choose_language_button_ge" />
+
+        <Button
+            android:id="@+id/choose_language_button_en"
+            style="@style/Navigation.Button.Execute"
+            android:text="@string/choose_language_button_en"
+            android:textStyle="normal" />
+        
+    </LinearLayout>
+
+</LinearLayout>

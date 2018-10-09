@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+<!-- 
+    	Quick guide to transact help strings -->
+  
+    <string name="help_quick_guide_to_transact_help_title"> Quick guide to transacting</string>
+        
+</resources>

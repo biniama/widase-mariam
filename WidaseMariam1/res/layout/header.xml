@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Header.Logo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+          
+	<TextView
+		android:id="@+id/header_version_number"
+		style="@style/TextView.VersionNumberHeader.Value"
+		android:layout_below="@+id/header_logo"
+		android:layout_alignRight="@+id/header_logo"
+		android:gravity="right"/>
+
+	<ImageView
+	    android:id="@+id/header_logo"
+	    style="@style/Header.Logo"
+	    android:layout_alignParentLeft="true"
+	    android:layout_alignParentTop="true"
+	    android:contentDescription="@android:string/untitled"
+	    android:src="@drawable/widase_mariam_header" />
+    
+</RelativeLayout>

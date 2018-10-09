@@ -1,0 +1,12 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MainLayout"
+ 	android:orientation="vertical" >
+
+    <ImageView
+		style="@style/Header"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@android:string/untitled"
+        android:src="@drawable/dengel_mariam" />
+
+</RelativeLayout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MainLayout.ScrollView" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/header" />
+
+        <TextView
+            android:id="@+id/home_part_of_book_list_label"
+            style="@style/TextView.Header"
+            android:layout_width="match_parent"
+            android:text="@string/home_part_of_book_list_label" />
+
+        <LinearLayout
+            style="@style/Container.Button"
+            android:layout_width="match_parent" >
+
+            <Button
+                android:id="@+id/home_day_zeweter_button"
+                style="@style/Navigation.Button.Execute"
+                android:text="@string/home_day_zeweter_button" />
+            
+            <Button
+                android:id="@+id/home_day_monday_button"
+                style="@style/Navigation.Button.Execute"
+                android:text="@string/home_day_monday_button" />
+
+            <Button
+                android:id="@+id/home_day_tuesday_button"
+                style="@style/Navigation.Button.Execute"
+                android:text="@string/home_day_tuesday_button" />
+
+            <Button
+                android:id="@+id/home_day_wednesday_button"
+                style="@style/Navigation.Button.Execute"
+                android:text="@string/home_day_wednesday_button" />
+
+            <Button
+                android:id="@+id/home_day_thursday_button"
+                style="@style/Navigation.Button.Execute"
+                android:text="@string/home_day_thursday_button" />
+
+            <Button
+                android:id="@+id/home_day_friday_button"
+                style="@style/Navigation.Button.Execute"
+                android:text="@string/home_day_friday_button" />
+
+            <Button
+                android:id="@+id/home_day_saturday_button"
+                style="@style/Navigation.Button.Execute"
+                android:text="@string/home_day_saturday_button" />
+
+            <Button
+                android:id="@+id/home_day_sunday_button"
+                style="@style/Navigation.Button.Execute"
+                android:text="@string/home_day_sunday_button" />
+
+            <Button
+                android:id="@+id/home_day_anqetse_birhan_button"
+                style="@style/Navigation.Button.Execute"
+                android:text="@string/home_day_anqetse_birhan_button" />
+
+            <Button
+                android:id="@+id/home_day_yiwedsewa_melaekt_button"
+                style="@style/Navigation.Button.Execute"
+                android:text="@string/home_day_yiwedsewa_melaekt_button" />
+
+            <Button
+                android:id="@+id/home_day_melka_mariam_button"
+                style="@style/Navigation.Button.Execute"
+                android:text="@string/home_day_melka_mariam_button" />
+            
+			<Button
+                android:id="@+id/home_day_melka_eyesus_button"
+                style="@style/Navigation.Button.Execute"
+                android:text="@string/home_day_melka_eyesus_button" />
+               
+			<Button
+                android:id="@+id/home_day_melka_edom_button"
+                style="@style/Navigation.Button.Execute"
+                android:text="@string/home_day_melka_edom_button" />
+			
+			<Button
+                android:id="@+id/home_go_to_choose_language_button"
+                style="@style/Navigation.Button.Cancel"
+                android:text="@string/home_go_to_choose_language_button" />
+            
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>
